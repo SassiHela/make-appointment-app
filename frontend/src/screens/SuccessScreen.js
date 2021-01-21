@@ -14,9 +14,7 @@ const SuccessScreen = ({ match }) => {
   }, [dispatch, appointmentId]);
   return (
     <Container>
-      <Message variant="success">
-        votre paiement a été traité avec succès
-      </Message>
+      <Message variant="success">Payment completed successfully</Message>
     </Container>
   );
 };

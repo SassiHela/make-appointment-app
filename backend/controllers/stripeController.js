@@ -13,8 +13,8 @@ const stripePayAppointment = asyncHandler(async (req, res) => {
   let cancel_url = "";
 
   if (process.env.NODE_ENV === "production") {
-    success_url = ``;
-    cancel_url = ``;
+    success_url = `https://make-appointmentapp.herokuapp.com/appointment/${_id}/pay`;
+    cancel_url = `https://make-appointmentapp.herokuapp.com/appointment/${_id}/cancel`;
   } else {
     success_url = `http://localhost:3000/appointment/${_id}/pay`;
     cancel_url = `http://localhost:3000/appointment/${_id}/cancel`;

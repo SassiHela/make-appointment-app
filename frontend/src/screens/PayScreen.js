@@ -25,15 +25,12 @@ const PayScreen = ({ match }) => {
   const appointmentDetails = useSelector((state) => state.appointmentDetails);
   const { appointment, loading, error } = appointmentDetails;
 
-  const appointmentPay = useSelector((state) => state.appointmentPay);
-  const { loading: loadingPay, success: successPay } = appointmentPay;
-
   useEffect(() => {
-    if (!appointment || successPay || appointment._id !== appointmentId) {
+    if (!appointment || appointment._id !== appointmentId) {
       dispatch({ type: APPOINTMENT_PAY_RESET });
       dispatch(getAppointmentDetails(appointmentId));
     }
-  }, [dispatch, appointment, successPay, appointmentId]);
+  }, [dispatch, appointment, appointmentId]);
 
   const successPayementHandler = async () => {
     // Get Stripe.js instance
@@ -119,7 +116,7 @@ const PayScreen = ({ match }) => {
               </ListGroup.Item>
               {!appointment.isPaid && (
                 <ListGroup.Item>
-                  {loadingPay && <Loader />}
+                  {/* {loadingPay && <Loader />} */}
                   <Button
                     type="button"
                     className="btn-block"

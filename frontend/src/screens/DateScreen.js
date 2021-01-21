@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CheckoutSteps from "../components/CheckoutSteps";
 import FormContainer from "../components/FormContainer";
 import { Button, Form } from "react-bootstrap";
@@ -6,12 +6,16 @@ import { saveAppointmentDate } from "../actions/appointmentActions";
 import { useDispatch, useSelector } from "react-redux";
 
 const DateScreen = ({ history }) => {
-  const appointment = useSelector((state) => state.appointmentDetails);
+  const appointment = useSelector((state) => state.createAppointment);
   const { appointmentDate } = appointment;
 
-  const [selectedDate, handleDateChange] = useState(appointmentDate);
+  //new Date().toISOString().split("T")[0]
+  const [selectedDate, handleDateChange] = useState();
 
   const dispatch = useDispatch();
+  useEffect(() => {
+    if (appointmentDate) handleDateChange(appointmentDate);
+  }, [appointmentDate]);
 
   const submithandler = (e) => {
     e.preventDefault();

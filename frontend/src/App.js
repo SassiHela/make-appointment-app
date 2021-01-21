@@ -10,6 +10,7 @@ import RegistrationScreen from "./screens/RegistrationScreen";
 import DateScreen from "./screens/DateScreen";
 import PayScreen from "./screens/PayScreen";
 import SuccessScreen from "./screens/SuccessScreen";
+import CancelScreen from "./screens/CancelScreen";
 
 import { Route } from "react-router-dom";
 
@@ -20,6 +21,7 @@ const App = () => {
       <main className="py-3">
         <Route exact path="/appointment/:id" component={PayScreen} />
         <Route path="/appointment/:id/pay" component={SuccessScreen} />
+        <Route path="/appointment/:id/cancel" component={CancelScreen} />
         <Route path="/payment" component={PaymentScreen} />
         <Route path="/address" component={AddressScreen} />
         <Route path="/date" component={DateScreen} />
