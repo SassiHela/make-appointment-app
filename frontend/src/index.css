@@ -28,7 +28,7 @@ main {
   display: flex;
   justify-content: flex-end;
   padding-right: 50px;
-  margin-top: 50px;
+  /* margin-top: 50px; */
 }
 .content .imgBox img {
   max-width: 340px;
