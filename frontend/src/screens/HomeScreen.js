@@ -30,7 +30,8 @@ const HomeScreen = ({ history }) => {
           </div>
           <div className="imgBox">
             <img
-              src="/assets/photo-recycle-bins.jpg"
+              // src="/assets/photo-recycle-bins.jpg"
+              src="/assets/recycle-bins.png"
               className="recycle-container-img"
               alt="main-img"
             />
